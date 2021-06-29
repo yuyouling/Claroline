@@ -150,6 +150,7 @@ services:
     Claroline\CoreBundle\API\Serializer\Location\LocationSerializer:
         tags: [claroline.serializer]
         arguments:
+            - '@security.authorization_checker'
             - '@Claroline\AppBundle\Persistence\ObjectManager'
             - '@Claroline\CoreBundle\API\Serializer\File\PublicFileSerializer'
 

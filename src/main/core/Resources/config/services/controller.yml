@@ -233,7 +233,6 @@ services:
         public: true
         arguments:
             - '@Claroline\AppBundle\API\TransferProvider'
-            - '%claroline.api.core_schema.dir%'
             - '@Claroline\AppBundle\Event\StrictDispatcher'
             - '@Claroline\CoreBundle\Manager\ApiManager'
 
@@ -333,6 +332,7 @@ services:
         parent: Claroline\AppBundle\Controller\AbstractCrudController
         public: true
         arguments:
+            - '@security.authorization_checker'
             - '@Claroline\CoreBundle\Manager\LocationManager'
 
     Claroline\CoreBundle\Controller\APINew\Location\RoomController:
